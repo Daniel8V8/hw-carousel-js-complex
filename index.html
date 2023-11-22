@@ -31,15 +31,19 @@
 
       .carousel .slick-slide {
         perspective: 500px;
+      
       }
       .carousel .slick-slide.slick-current img {
         transform: rotateY(60deg) scale(1.2);
+        opacity: 0.2;
       }
       .carousel .slick-slide.slick-current + .slick-slide img {
         transform: rotateY(40deg) scale(1.1);
+        opacity: 5;
       }
       .carousel .slick-slide.slick-current + .slick-slide + .slick-slide img {
         transform: rotateY(20deg) scale(1);
+        opacity: 0.2;
       }
       .carousel
         .slick-slide.slick-current
