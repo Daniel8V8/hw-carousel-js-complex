@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Example | Complex</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+      integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+      }
+      .carousel .slick-list {
+        overflow: visible;
+        /* overflow: hidden; */
+      }
+
+      .carousel .slick-slide {
+        perspective: 500px;
+      }
+      .carousel .slick-slide.slick-current img {
+        transform: rotateY(60deg) scale(1.2);
+      }
+      .carousel .slick-slide.slick-current + .slick-slide img {
+        transform: rotateY(40deg) scale(1.1);
+      }
+      .carousel .slick-slide.slick-current + .slick-slide + .slick-slide img {
+        transform: rotateY(20deg) scale(1);
+      }
+      .carousel
+        .slick-slide.slick-current
+        + .slick-slide
+        + .slick-slide
+        ~ .slick-slide
+        img {
+        transform: rotateY(0deg) scale(0.83);
+      }
+
+      .carousel img {
+        width: 100%;
+        transform: rotateY(70deg) scale(1.5);
+        transition: 1s;
+      }
+      .container {
+        width: 90%;
+        margin: 5% auto;
+        /* background-color: aliceblue; */
+        height: 450px;
+        padding: 200px 0;
+      }
+      .slick-prev:before {
+        content: "◄";
+        padding: 0.3em 0.4em 0.3em 0.2em;
+        margin-left: -0.65em;
+        background-color: orange;
+        color: #333;
+        border-radius: 0.2em;
+      }
+      .slick-next:before {
+        content: "►";
+        padding: 0.3em 0.2em 0.3em 0.3em;
+        background-color: orange;
+        color: #333;
+        border-radius: 0.2em;
+      }
+      /* CONTROLS */
+      .carousel .slick-prev,
+      .slick-next {
+        z-index: 10000;
+      }
+
+      /* Media Query */
+
+      @media (max-width: 800px) {
+        .carousel .slick-list {
+          overflow: hidden;
+        }
+        .carousel .slick-slide {
+          perspective: 300px;
+        }
+
+        .carousel .slick-prev {
+          transform: translateX(210px) translateY(120px) rotate(-90deg);
+        }
+        .slick-prev:before {
+          content: "◄";
+          padding: 0.23em 0.4em 0.4em 0.2em;
+        }
+        .carousel .slick-next {
+          transform: translateX(-210px) translateY(-150px) rotate(90deg);
+        }
+        .slick-next:before {
+          content: "◄";
+          padding: 0.23em 0.4em 0.4em 0.2em;
+        }
+        .carousel .slick-slide img:nth-child(1) {
+          transform: rotateX(40deg) scale(1.5);
+        }
+
+        .carousel .slick-slide.slick-current img {
+          transform: rotateX(0deg) scale(1.1);
+        }
+
+        .carousel .slick-slide.slick-current + .slick-slide img {
+          transform: rotateX(40deg) scale(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="carousel">
+        <div>
+          <img src="images/4.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/5.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/6.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/7.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/8.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/9.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/1.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/2.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+        <div>
+          <img src="images/3.jpg" alt="" />
+          <div class="reflection"></div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      $(".carousel").slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+
+        responsive: [
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              //   dots: true,
+              vertical: true,
+              verticalSwiping: true,
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
